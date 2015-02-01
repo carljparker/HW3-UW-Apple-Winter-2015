@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F8EAA9C0-2618-4FF0-839E-DD2BBB7866BC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HW3</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>29FDF01FB5698C5849D14B93D7A163CE21660F00</key>
+		<string>/Volumes/KINGSTON/GiT-PuB/mac-ios-course-1/HW3/</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HW3.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>29FDF01FB5698C5849D14B93D7A163CE21660F00</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>/Volumes/KINGSTON/GiT-PuB/mac-ios-course-1/HW3/</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>29FDF01FB5698C5849D14B93D7A163CE21660F00</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>29FDF01FB5698C5849D14B93D7A163CE21660F00</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HW3</string>
+		</dict>
+	</array>
+</dict>
+</plist>
