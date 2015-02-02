@@ -14,12 +14,12 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
+    self.itemTextField.delegate = self;
+
 }
 
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
+-(void) controlTextDidChange:(NSNotification *)obj {
+    NSLog( @"%@", self.itemTextField.stringValue);
 }
 
 @end
