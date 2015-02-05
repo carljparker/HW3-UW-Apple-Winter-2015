@@ -14,6 +14,7 @@
 		87644B831A7DC2B4006C0404 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87644B811A7DC2B4006C0404 /* Main.storyboard */; };
 		87644B8F1A7DC2B4006C0404 /* HW3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87644B8E1A7DC2B4006C0404 /* HW3Tests.m */; };
 		87D325D81A81F04D005B2099 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D325D71A81F04D005B2099 /* ToDoItem.m */; };
+		87D325DC1A830C3F005B2099 /* ToDoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D325DB1A830C3F005B2099 /* ToDoList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		87644B8E1A7DC2B4006C0404 /* HW3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HW3Tests.m; sourceTree = "<group>"; };
 		87D325D71A81F04D005B2099 /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
 		87D325D91A81F07F005B2099 /* ToDoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
+		87D325DA1A830ACE005B2099 /* ToDoList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoList.h; sourceTree = "<group>"; };
+		87D325DB1A830C3F005B2099 /* ToDoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				87644B751A7DC2B4006C0404 /* Supporting Files */,
 				87D325D71A81F04D005B2099 /* ToDoItem.m */,
 				87D325D91A81F07F005B2099 /* ToDoItem.h */,
+				87D325DA1A830ACE005B2099 /* ToDoList.h */,
+				87D325DB1A830C3F005B2099 /* ToDoList.m */,
 			);
 			path = HW3;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87644B7E1A7DC2B4006C0404 /* ViewController.m in Sources */,
+				87D325DC1A830C3F005B2099 /* ToDoList.m in Sources */,
 				87644B7B1A7DC2B4006C0404 /* main.m in Sources */,
 				87D325D81A81F04D005B2099 /* ToDoItem.m in Sources */,
 				87644B791A7DC2B4006C0404 /* AppDelegate.m in Sources */,
