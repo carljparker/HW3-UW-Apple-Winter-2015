@@ -26,6 +26,10 @@
   
 }
 
+-(void)removeItemWithTitle:(NSString *) title {
+    
+}
+
   // check if OK to insert
 -(BOOL) canAddItemWithTitle:(NSString *) item {
   

@@ -22,7 +22,8 @@
 -(void)addItem:(ToDoItem *)item;    // insert item if OK
 -(BOOL)canAddItem:(ToDoItem *)item; // check if OK to insert
 
--(void)addItemWithTitle:(NSString*)title; // create and insert item if OK
+-(void)addItemWithTitle:(NSString *)title; // create and insert item if OK
+-(void)removeItemWithTitle:(NSString *) title;
 -(BOOL)canAddItemWithTitle:(NSString *)item; // check if OK to insert
 -(BOOL)hasItemWithTitle:(NSString*)title; // check if any item contained already has same title
 
