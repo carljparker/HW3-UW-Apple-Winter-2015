@@ -16,9 +16,13 @@
 @interface ToDoList : NSObject
 
 // properties
-@property (readonly, nonatomic) BOOL duplicatesOK;
+@property (nonatomic) BOOL duplicatesOK;
+@property (nonatomic) NSString * title;
 
 // methods
+
++(instancetype)toDoListWithTitle:(NSString *)title;
+
 -(void)addItem:(ToDoItem *)item;    // insert item if OK
 -(BOOL)canAddItem:(ToDoItem *)item; // check if OK to insert
 

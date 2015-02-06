@@ -8,7 +8,15 @@
 
 #import "ToDoList.h"
 
+
 @implementation ToDoList
+
++(instancetype)toDoListWithTitle:(NSString *)title;
+{
+    ToDoList *object = [[self alloc] init];
+    object.title = title;
+    return object;
+}
 
   // insert item if OK
 -(void) addItem:(ToDoItem *)item {

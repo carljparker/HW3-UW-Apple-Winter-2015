@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ToDoList.h"
 
 @implementation ViewController
 
@@ -18,8 +19,12 @@
     
     self.itemListTable.delegate = self;
     self.itemListTable.dataSource = self;
+    
+    itemArray = [ToDoList toDoListWithTitle:@"Hill 7"];
 
 }
+
+ToDoList *itemArray;
 
 -(void) controlTextDidChange:(NSNotification *)obj {
     NSLog( @"%@", self.itemTextField.stringValue);
@@ -29,7 +34,7 @@
 {
     NSTableCellView *cell = [tableView makeViewWithIdentifier:@"Cell" owner:nil];
     
-    cell.textField.stringValue = @"Hello There";
+    cell.textField.stringValue = [itemArray title];
     return cell;
 }
 
