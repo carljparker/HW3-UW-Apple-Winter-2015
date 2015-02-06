@@ -16,8 +16,8 @@
 @interface ToDoList : NSObject
 
 // properties
-@property (nonatomic) BOOL duplicatesOK;
-@property (nonatomic) NSString * title;
+@property (readonly, assign) BOOL duplicatesOK;
+@property (readonly, assign) NSString * listTitle;
 
 // methods
 

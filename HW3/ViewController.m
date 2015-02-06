@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ToDoList.h"
 
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -21,6 +22,7 @@
     self.itemListTable.dataSource = self;
     
     itemArray = [ToDoList toDoListWithTitle:@"Hill 7"];
+    
 
 }
 
@@ -34,7 +36,7 @@ ToDoList *itemArray;
 {
     NSTableCellView *cell = [tableView makeViewWithIdentifier:@"Cell" owner:nil];
     
-    cell.textField.stringValue = [itemArray title];
+    cell.textField.stringValue = [itemArray listTitle];
     return cell;
 }
 
@@ -43,5 +45,7 @@ ToDoList *itemArray;
     return 5;
 }
 
+- (IBAction)setDups:(id)sender {
+}
 
 @end

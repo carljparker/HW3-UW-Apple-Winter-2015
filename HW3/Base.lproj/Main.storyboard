@@ -700,6 +700,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="setDups:" target="XfG-lQ-9wD" id="Zjp-yL-GMd"/>
+                                </connections>
                             </button>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIe-bM-rxz">
                                 <rect key="frame" x="20" y="20" width="440" height="136"/>
@@ -762,6 +765,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="allowDups" destination="eaS-jU-QOV" id="oIx-Lf-eAl"/>
                         <outlet property="itemListTable" destination="bpc-kj-rrx" id="Kps-gB-uMw"/>
                         <outlet property="itemTextField" destination="ev6-8a-oK9" id="5Qn-Da-0Fh"/>
                     </connections>

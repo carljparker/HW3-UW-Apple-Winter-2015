@@ -8,13 +8,20 @@
 
 #import "ToDoList.h"
 
+@interface ToDoList ()
+
+@property (readwrite, assign) BOOL duplicatesOK;
+@property (readwrite, assign) NSString * listTitle;
+
+@end
+
 
 @implementation ToDoList
 
 +(instancetype)toDoListWithTitle:(NSString *)title;
 {
     ToDoList *object = [[self alloc] init];
-    object.title = title;
+    object.listTitle = title;
     return object;
 }
 

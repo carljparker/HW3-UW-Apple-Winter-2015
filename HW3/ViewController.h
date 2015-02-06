@@ -14,5 +14,7 @@
 
 @property (weak) IBOutlet NSTableView *itemListTable;
 
+@property (weak) IBOutlet NSButton *allowDups;
+
 @end
 
