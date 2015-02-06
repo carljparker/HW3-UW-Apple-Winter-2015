@@ -726,7 +726,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="bwc-Xb-EXt">
+                                                        <tableCellView identifier="Cell" id="bwc-Xb-EXt">
                                                             <rect key="frame" x="1" y="1" width="116" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -762,12 +762,13 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="itemListTable" destination="bpc-kj-rrx" id="Kps-gB-uMw"/>
                         <outlet property="itemTextField" destination="ev6-8a-oK9" id="5Qn-Da-0Fh"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="241" y="630"/>
         </scene>
     </scenes>
 </document>
