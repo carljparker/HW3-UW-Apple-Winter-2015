@@ -24,11 +24,11 @@
     // Set default state for controls
     self.addTextAsItem.enabled = NO;
     self.removeItemWithText.enabled = NO;
-    self.allowDups.state = NO;
+    self.allowDups.state = YES;
    
     //instantiate the To Do List object
     toDoList = [ToDoList toDoListWithTitle:@"Hill 7"];
-    toDoList.duplicatesOK = NO;
+    toDoList.duplicatesOK = YES;
     
 }
 
@@ -122,6 +122,22 @@ ToDoList *toDoList;
 
 - (IBAction)setDups:(id)sender {
     toDoList.duplicatesOK = ! toDoList.duplicatesOK;
+    
+    // Ugh. Reproducing this block of code from
+    // controlTextDidChange
+    NSString * fieldContents = self.itemTextField.stringValue;
+    
+    // Only enable the add button if constraints are met
+    if ( fieldContents ) {
+        if ( toDoList.duplicatesOK ) {
+            self.addTextAsItem.enabled = YES;
+        } else if ( ! [toDoList hasItemWithTitle:fieldContents] ) {
+            self.addTextAsItem.enabled = YES;
+        } else {
+            self.addTextAsItem.enabled = NO;
+        }
+    }
+
 }
 
 @end
