@@ -27,6 +27,30 @@
     return object;
 }
 
++(instancetype)groceryList {
+    ToDoList *object = [[self alloc] init];
+    object.listTitle = @"Groceries";
+    
+    NSArray * groceries = @[ @"Goat Milk Kefir", @"Goji Berries", @"Kombucha"];
+    for (id item in groceries) {
+        [object.theList addObject:[ToDoItem toDoItemWithTitle:item]];
+    }
+    
+    return object;
+}
+
++(instancetype)burningManList {
+    ToDoList *object = [[self alloc] init];
+    object.listTitle = @"Burning Man";
+    
+    NSArray * supplies = @[ @"Tent", @"Water", @"Beer in Cans"];
+    for (id item in supplies) {
+        [object.theList addObject:[ToDoItem toDoItemWithTitle:item]];
+    }
+    
+    return object;
+}
+
 
   // create and insert item if OK
 -(void) addItemWithTitle:(NSString*) title {
