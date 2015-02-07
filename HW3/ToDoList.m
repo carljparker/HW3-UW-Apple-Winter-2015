@@ -32,7 +32,7 @@
     object.listTitle = @"Groceries";
     object.theList = [NSMutableArray new];
     
-    NSArray * groceries = @[ @"Goat Milk Kefir", @"Goji Berries", @"Kombucha"];
+    NSArray * groceries = @[ @"Water", @"Goat Milk Kefir", @"Goji Berries", @"Kombucha"];
     for (id item in groceries) {
         [object.theList addObject:[ToDoItem toDoItemWithTitle:item]];
     }
@@ -82,7 +82,7 @@
     
     // Create a list of all the items to remove
     for (id item in _theList) {
-        if ( [item title] == title ) {
+        if ( [[item title] isEqualToString:title] ) {
             [removeList addObject:item];
         }
     }
@@ -101,7 +101,7 @@
   // check if any item contained already has the specified title
 -(BOOL) hasItemWithTitle:(NSString*) title {
     for (id item in _theList) {
-        if ( [item title] == title ) {
+        if ( [[item title] isEqualToString:title] ) {
             return YES;
         }
     }
