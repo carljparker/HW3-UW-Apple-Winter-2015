@@ -26,28 +26,55 @@
     self.removeItemWithText.enabled = NO;
     self.allowDups.state = NO;
    
-    itemArray = [ToDoList toDoListWithTitle:@"Hill 7"];
+    //instantiate the To Do List object
+    toDoList = [ToDoList toDoListWithTitle:@"Hill 7"];
     
-
 }
 
-ToDoList *itemArray;
+ToDoList *toDoList;
 
 -(void) controlTextDidChange:(NSNotification *)obj {
     
-    if ( self.itemTextField ) {
-        self.addTextAsItem.enabled = YES;
-    }
+    NSString * fieldContents = self.itemTextField.stringValue;
     
+    // Only enable the add button if constraints are met
+    if ( fieldContents ) {
+        if ( [self allowDups] ) {
+            self.addTextAsItem.enabled = YES;
+       }
+        else if ( ! [toDoList hasItemWithTitle:fieldContents] ) {
+            self.addTextAsItem.enabled = YES;
+       }
+    }
+
+    // enable remove button if the text matches something in the list
+    if ( [toDoList hasItemWithTitle:fieldContents] ) {
+        self.removeItemWithText.enabled = YES;
+    }
     NSLog( @"%@", self.itemTextField.stringValue);
     
+}
+
+- (IBAction)addItemButton:(id)sender {
+    // add the item
+    [toDoList addItemWithTitle:self.itemTextField.stringValue];
+    
+    // reset the text field and add button
+    self.itemTextField.stringValue = @"";
+    self.addTextAsItem.enabled = NO;
+    self.removeItemWithText.enabled = NO;
+
+}
+
+- (IBAction)addOnTextFieldReturn:(id)sender {
+    [self addItemButton:sender];
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSTableCellView *cell = [tableView makeViewWithIdentifier:@"Cell" owner:nil];
     
-    cell.textField.stringValue = [itemArray listTitle];
+    cell.textField.stringValue = [toDoList listTitle];
     return cell;
 }
 
@@ -57,7 +84,7 @@ ToDoList *itemArray;
 }
 
 - (IBAction)setDups:(id)sender {
-    itemArray.duplicatesOK = ! itemArray.duplicatesOK;
+    toDoList.duplicatesOK = ! toDoList.duplicatesOK;
 }
 
 @end

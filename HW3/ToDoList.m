@@ -11,7 +11,7 @@
 @interface ToDoList ()
 
 @property (readwrite, assign) NSString * listTitle;
-@property (readwrite, assign) NSMutableArray * theList;
+@property (readwrite) NSMutableArray * theList;
 
 @end
 
@@ -22,6 +22,7 @@
 {
     ToDoList *object = [[self alloc] init];
     object.listTitle = title;
+    object.theList = [NSMutableArray new];
     return object;
 }
 
@@ -38,11 +39,31 @@
 
   // create and insert item if OK
 -(void) addItemWithTitle:(NSString*) title {
-  
+    
+    NSUInteger currentCount = [_theList count];
+    
+    ToDoItem * newItem = [ToDoItem toDoItemWithTitle:title];
+    
+    [_theList addObject:newItem];
+    
+    // test
+    NSUInteger newCount = [_theList count];
+    assert( newCount == currentCount + 1);
+    
 }
 
 -(void)removeItemWithTitle:(NSString *) title {
+    NSUInteger currentCount = [_theList count];
     
+    if ( [self hasItemWithTitle:title] ) {
+        
+        ToDoItem * obsItem = [ToDoItem toDoItemWithTitle:title];
+        [_theList removeObject:obsItem];
+    }
+    
+    // test
+    NSUInteger newCount = [_theList count];
+    assert( newCount == currentCount - 1);
 }
 
   // check if OK to insert
@@ -53,8 +74,12 @@
 
   // check if any item contained already has same title
 -(BOOL) hasItemWithTitle:(NSString*) title {
-  
-    return YES;
+    for (id item in _theList) {
+        if ( [item title] == title ) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
   // an array of all item titles (NSString*)

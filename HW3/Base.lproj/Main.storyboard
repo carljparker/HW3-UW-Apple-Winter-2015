@@ -679,6 +679,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="addOnTextFieldReturn:" target="XfG-lQ-9wD" id="cG2-Nh-b6I"/>
+                                </connections>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Suy-be-uy4">
                                 <rect key="frame" x="14" y="169" width="82" height="32"/>
@@ -686,6 +689,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="addItemButton:" target="XfG-lQ-9wD" id="g4U-6n-Vxu"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6NZ-Wf-IOW">
                                 <rect key="frame" x="101" y="169" width="82" height="32"/>
