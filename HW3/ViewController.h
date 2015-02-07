@@ -14,6 +14,10 @@
 
 @property (weak) IBOutlet NSTableView *itemListTable;
 
+@property (weak) IBOutlet NSButton *addTextAsItem;
+
+@property (weak) IBOutlet NSButton *removeItemWithText;
+
 @property (weak) IBOutlet NSButton *allowDups;
 
 @end

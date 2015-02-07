@@ -10,10 +10,10 @@
 
 @implementation ToDoItem
 
-+(instancetype)toDoItemWithName:(NSString*)name
++(instancetype)toDoItemWithTitle:(NSString*)title
 {
     ToDoItem *object = [[self alloc] init];
-    object.name = name;
+    object.title = title;
     return object;
 }
 

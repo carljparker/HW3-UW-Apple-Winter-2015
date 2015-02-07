@@ -10,8 +10,8 @@
 
 @interface ToDoList ()
 
-@property (readwrite, assign) BOOL duplicatesOK;
 @property (readwrite, assign) NSString * listTitle;
+@property (readwrite, assign) NSMutableArray * theList;
 
 @end
 
@@ -66,10 +66,12 @@
 
   // an array of all items
 -(NSArray*) allItems {
-
-    ToDoItem * myToDoItem = [ToDoItem toDoItemWithName:@"Apples"];
     
-    return @[ myToDoItem ];
+    
+
+    ToDoItem * myToDoItem = [ToDoItem toDoItemWithTitle:@"Apples"];
+
+    return  @[ myToDoItem ];
     
 }
 

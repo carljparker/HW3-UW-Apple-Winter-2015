@@ -765,9 +765,11 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="addTextAsItem" destination="Suy-be-uy4" id="3cr-Hf-Ihg"/>
                         <outlet property="allowDups" destination="eaS-jU-QOV" id="oIx-Lf-eAl"/>
                         <outlet property="itemListTable" destination="bpc-kj-rrx" id="Kps-gB-uMw"/>
                         <outlet property="itemTextField" destination="ev6-8a-oK9" id="5Qn-Da-0Fh"/>
+                        <outlet property="removeItemWithText" destination="6NZ-Wf-IOW" id="Riw-Pp-sDt"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

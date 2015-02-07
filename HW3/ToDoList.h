@@ -16,7 +16,7 @@
 @interface ToDoList : NSObject
 
 // properties
-@property (readonly, assign) BOOL duplicatesOK;
+@property (readwrite, assign) BOOL duplicatesOK;
 @property (readonly, assign) NSString * listTitle;
 
 // methods

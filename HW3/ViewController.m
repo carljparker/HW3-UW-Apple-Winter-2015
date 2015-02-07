@@ -21,6 +21,11 @@
     self.itemListTable.delegate = self;
     self.itemListTable.dataSource = self;
     
+    // Set default state for controls
+    self.addTextAsItem.enabled = NO;
+    self.removeItemWithText.enabled = NO;
+    self.allowDups.state = NO;
+   
     itemArray = [ToDoList toDoListWithTitle:@"Hill 7"];
     
 
@@ -29,7 +34,13 @@
 ToDoList *itemArray;
 
 -(void) controlTextDidChange:(NSNotification *)obj {
+    
+    if ( self.itemTextField ) {
+        self.addTextAsItem.enabled = YES;
+    }
+    
     NSLog( @"%@", self.itemTextField.stringValue);
+    
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
@@ -46,6 +57,7 @@ ToDoList *itemArray;
 }
 
 - (IBAction)setDups:(id)sender {
+    itemArray.duplicatesOK = ! itemArray.duplicatesOK;
 }
 
 @end

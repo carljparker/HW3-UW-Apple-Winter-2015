@@ -26,10 +26,10 @@
 @interface ToDoItem : NSObject
 
 // properties
-@property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) NSString* title;
 
 // methods
-+(instancetype)toDoItemWithName:(NSString *)name;
++(instancetype)toDoItemWithTitle:(NSString *)title;
 
 @end
 
