@@ -68,10 +68,8 @@ ToDoList *toDoList;
     [toDoList addItemWithTitle:self.itemTextField.stringValue];
     
     // reset the text field and add button
-    self.itemTextField.stringValue = @"";
-    self.addTextAsItem.enabled = NO;
-    self.removeItemWithText.enabled = NO;
-
+    // and redraw the table
+    [self updateUI];
 }
 
 
@@ -92,11 +90,20 @@ ToDoList *toDoList;
     
     // remove the item
     [toDoList removeItemWithTitle:self.itemTextField.stringValue];
+   
+    // reset the text field and add button
+    // and redraw the table
+    [self updateUI];
 
+}
+
+
+- (void) updateUI {
     self.itemTextField.stringValue = @"";
     self.addTextAsItem.enabled = NO;
     self.removeItemWithText.enabled = NO;
-   
+
+    [self.itemListTable reloadData];
 }
 
 
@@ -104,7 +111,7 @@ ToDoList *toDoList;
 {
     NSTableCellView *cell = [tableView makeViewWithIdentifier:@"Cell" owner:nil];
     
-    cell.textField.stringValue = [toDoList listTitle];
+    cell.textField.stringValue = [toDoList itemTitles][row];
     return cell;
 }
 

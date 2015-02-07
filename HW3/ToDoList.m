@@ -49,15 +49,26 @@
     
     // yes, this will remove all items in the list that
     // match the specified title . . . by design.
+    
+    // This approach is necessary because you can't change
+    // the mutable array while you are enumerating it.
+    NSMutableArray * removeList = [NSMutableArray new];
+    
+    // Create a list of all the items to remove
     for (id item in _theList) {
         if ( [item title] == title ) {
-            [_theList removeObject:item];
+            [removeList addObject:item];
         }
+    }
+    
+    // Remove them
+    for (id item in removeList) {
+        [_theList removeObject:item];
     }
     
     // test
     NSUInteger newCount = [_theList count];
-    assert( newCount == currentCount - 1);
+    assert( newCount < currentCount );
 }
 
 
@@ -75,12 +86,12 @@
   // an array of all item titles (NSString*)
 -(NSArray*) itemTitles {
   
-    NSMutableArray * titleArray;
+    NSMutableArray * titleArray = [NSMutableArray new];
     
     for (id item in _theList) {
         [titleArray addObject:[item title]];
     }
-
+    NSLog(@"%lu", (unsigned long)[titleArray count]);
     return [NSArray arrayWithArray:titleArray];
 
 }
