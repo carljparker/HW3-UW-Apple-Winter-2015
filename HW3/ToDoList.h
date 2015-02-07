@@ -22,6 +22,9 @@
 // methods
 
 +(instancetype) toDoListWithTitle:(NSString *)title;
++(instancetype) groceryList;
++(instancetype) burningManList;
+
 
 -(void) addItemWithTitle:(NSString *)title; // create and insert item if OK
 -(void) removeItemWithTitle:(NSString *) title;

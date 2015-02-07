@@ -27,7 +27,7 @@
     self.allowDups.state = YES;
    
     //instantiate the To Do List object
-    toDoList = [ToDoList toDoListWithTitle:@"Hill 7"];
+    toDoList = [ToDoList groceryList];
     toDoList.duplicatesOK = YES;
     
 }

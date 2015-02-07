@@ -30,6 +30,7 @@
 +(instancetype)groceryList {
     ToDoList *object = [[self alloc] init];
     object.listTitle = @"Groceries";
+    object.theList = [NSMutableArray new];
     
     NSArray * groceries = @[ @"Goat Milk Kefir", @"Goji Berries", @"Kombucha"];
     for (id item in groceries) {
@@ -42,6 +43,7 @@
 +(instancetype)burningManList {
     ToDoList *object = [[self alloc] init];
     object.listTitle = @"Burning Man";
+    object.theList = [NSMutableArray new];
     
     NSArray * supplies = @[ @"Tent", @"Water", @"Beer in Cans"];
     for (id item in supplies) {
