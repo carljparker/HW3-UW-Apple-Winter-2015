@@ -54,6 +54,9 @@ ToDoList *toDoList;
     if ( [toDoList hasItemWithTitle:fieldContents] ) {
         self.removeItemWithText.enabled = YES;
     }
+    else {
+        self.removeItemWithText.enabled = NO;
+    }
     NSLog( @"%@", self.itemTextField.stringValue);
     
 }
@@ -76,7 +79,11 @@ ToDoList *toDoList;
   // they had clicked "Add" button.
 - (IBAction)addOnTextFieldReturn:(id)sender {
     
-    [self addItemButton:sender];
+    // if we haven't enabled the add button
+    // then return won't do anything either
+    if (self.addTextAsItem.enabled) {
+        [self addItemButton:sender];
+    }
     
 }
 
@@ -103,7 +110,7 @@ ToDoList *toDoList;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return ;
+    return [toDoList itemCount];
 }
 
 - (IBAction)setDups:(id)sender {
