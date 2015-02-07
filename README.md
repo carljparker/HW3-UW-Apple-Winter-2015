@@ -12,7 +12,13 @@ For someone like me, who is just starting out with Objective-C, this
 really helped to prevent me from making a lot of simple mistakes.
 
 The articles on enumeration were also helpful. Using `for id obj in
-collection` is much nicer than using a traditional for (;;;) loop.
+collection` is much nicer than using a traditional `for (;;;)` loop.
+One questions that comes up around the `for id obj in collection` syntax
+is whether it is guaranteed to return the objects in the array in the
+same order in which you would get them if you enumerated from lowest to
+highest index with a traditional `for (;;;)` loop. I didn't see anyplace
+that addresses this question. 
+
 
 ### One well-formed question or observation about the app, technologies used, or related topics. ###
 
