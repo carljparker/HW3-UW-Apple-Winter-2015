@@ -28,10 +28,12 @@
    
     //instantiate the To Do List object
     toDoList = [ToDoList toDoListWithTitle:@"Hill 7"];
+    toDoList.duplicatesOK = NO;
     
 }
 
 ToDoList *toDoList;
+
 
 -(void) controlTextDidChange:(NSNotification *)obj {
     
@@ -39,12 +41,13 @@ ToDoList *toDoList;
     
     // Only enable the add button if constraints are met
     if ( fieldContents ) {
-        if ( [self allowDups] ) {
+        if ( toDoList.duplicatesOK ) {
             self.addTextAsItem.enabled = YES;
-       }
-        else if ( ! [toDoList hasItemWithTitle:fieldContents] ) {
+        } else if ( ! [toDoList hasItemWithTitle:fieldContents] ) {
             self.addTextAsItem.enabled = YES;
-       }
+        } else {
+            self.addTextAsItem.enabled = NO;
+        }
     }
 
     // enable remove button if the text matches something in the list
@@ -55,7 +58,9 @@ ToDoList *toDoList;
     
 }
 
+
 - (IBAction)addItemButton:(id)sender {
+
     // add the item
     [toDoList addItemWithTitle:self.itemTextField.stringValue];
     
@@ -66,9 +71,27 @@ ToDoList *toDoList;
 
 }
 
+
+  // if a user types into text field and hits return behave as though
+  // they had clicked "Add" button.
 - (IBAction)addOnTextFieldReturn:(id)sender {
+    
     [self addItemButton:sender];
+    
 }
+
+
+- (IBAction)removeItemButton:(id)sender {
+    
+    // remove the item
+    [toDoList removeItemWithTitle:self.itemTextField.stringValue];
+
+    self.itemTextField.stringValue = @"";
+    self.addTextAsItem.enabled = NO;
+    self.removeItemWithText.enabled = NO;
+   
+}
+
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
@@ -80,7 +103,7 @@ ToDoList *toDoList;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return 5;
+    return ;
 }
 
 - (IBAction)setDups:(id)sender {

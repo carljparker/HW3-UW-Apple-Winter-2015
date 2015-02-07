@@ -699,6 +699,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="removeItemButton:" target="XfG-lQ-9wD" id="yhR-Ep-ePu"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaS-jU-QOV">
                                 <rect key="frame" x="330" y="181" width="132" height="18"/>

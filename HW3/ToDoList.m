@@ -18,6 +18,7 @@
 
 @implementation ToDoList
 
+
 +(instancetype)toDoListWithTitle:(NSString *)title;
 {
     ToDoList *object = [[self alloc] init];
@@ -26,16 +27,6 @@
     return object;
 }
 
-  // insert item if OK
--(void) addItem:(ToDoItem *)item {
-    
-};
-
-  // check if OK to insert
--(BOOL) canAddItem:(ToDoItem *) item {
-  
-    return YES;
-}
 
   // create and insert item if OK
 -(void) addItemWithTitle:(NSString*) title {
@@ -52,13 +43,16 @@
     
 }
 
+
 -(void)removeItemWithTitle:(NSString *) title {
     NSUInteger currentCount = [_theList count];
     
-    if ( [self hasItemWithTitle:title] ) {
-        
-        ToDoItem * obsItem = [ToDoItem toDoItemWithTitle:title];
-        [_theList removeObject:obsItem];
+    // yes, this will remove all items in the list that
+    // match the specified title . . . by design.
+    for (id item in _theList) {
+        if ( [item title] == title ) {
+            [_theList removeObject:item];
+        }
     }
     
     // test
@@ -66,13 +60,8 @@
     assert( newCount == currentCount - 1);
 }
 
-  // check if OK to insert
--(BOOL) canAddItemWithTitle:(NSString *) item {
-  
-    return YES;
-}
 
-  // check if any item contained already has same title
+  // check if any item contained already has the specified title
 -(BOOL) hasItemWithTitle:(NSString*) title {
     for (id item in _theList) {
         if ( [item title] == title ) {
@@ -82,28 +71,33 @@
     return NO;
 }
 
+
   // an array of all item titles (NSString*)
 -(NSArray*) itemTitles {
   
-    return @[ @"Apples", @"Bananas", @"Carrots" ];
+    NSMutableArray * titleArray;
+    
+    for (id item in _theList) {
+        [titleArray addObject:[item title]];
+    }
+
+    return [NSArray arrayWithArray:titleArray];
 
 }
 
+         
   // an array of all items
 -(NSArray*) allItems {
     
-    
-
-    ToDoItem * myToDoItem = [ToDoItem toDoItemWithTitle:@"Apples"];
-
-    return  @[ myToDoItem ];
+    return [NSArray arrayWithArray:_theList];
     
 }
 
+         
   // number of items contained in list
 -(NSUInteger) itemCount {
   
-    return 10;
+    return [_theList count];
 }
 
 
