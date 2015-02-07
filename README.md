@@ -1,3 +1,7 @@
+
+***Note*** The project at the current commit is configured to use the
+groceryList convenience constructor.
+
 ### How was your experience making this app? ###
 
 This was the most challenging HW so far. I think that needing to learn
